@@ -14,7 +14,8 @@ const Reviews = () => {
         console.log(newRating)
     }
     return (
-        <div style={{ marginTop: '100px' }} className="container">
+        <div style={{ marginTop: '100px' }} className="container text-center">
+            <h1>All <span style={{color:'rgb(250, 117, 139)'}}>ReViEwS</span></h1>
             <div className="row ms-5">
                 {
                     reviews.map(review => (
