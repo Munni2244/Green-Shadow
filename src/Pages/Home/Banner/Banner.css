@@ -1,0 +1,21 @@
+.banner1{
+    background-image: url("../../../images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    border-radius: 15px;
+    color: #555254;
+  
+
+}
+.banner2 img{
+    height: 250px;
+    width: 100%;
+}
+.allBtn{
+    background-image: linear-gradient(rgb(248, 187, 198), rgb(250, 117, 139));
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    width: 200px;
+}
