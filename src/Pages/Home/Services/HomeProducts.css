@@ -1,0 +1,7 @@
+.services:hover{
+    background-image: linear-gradient(white, rgb(243, 220, 224));
+    transform:scale(1.1);
+    transition: transform 0.5s;
+    padding: 5px;
+    color: black;
+}
