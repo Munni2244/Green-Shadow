@@ -1,7 +1,10 @@
 import React from 'react';
+import Navigation from '../Navigation/Navigation';
 import './Contact.css';
 const Contact = () => {
     return (
+      <div>
+            <Navigation></Navigation>
         <div className="contact row ">
             <div className="mt-5" >
                 <div className="text-center m-5">
@@ -13,6 +16,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
+      </div>
     );
 };
 

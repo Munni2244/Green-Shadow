@@ -10,5 +10,11 @@
 
 .dashBoard{
     height: 550px;
+    background-image: linear-gradient(pink, black);
 
+}
+.dashHeader{
+    background-color: rgb(14, 0, 8);
+    height: 100px;
+    color: white;
 }
