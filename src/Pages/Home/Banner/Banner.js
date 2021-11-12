@@ -2,6 +2,7 @@ import React from 'react';
 import './Banner.css';
 import bg1 from '../../../images/bg4.jpg';
 import bg2 from '../../../images/lipsticks.jpg';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -10,7 +11,7 @@ const Banner = () => {
                     <div className="mb-5 me-5">
                     <h1> <span style={{color:'rgb(250, 117, 139)'}}>Women Latest </span> and Beautiful Maybelline </h1>
                     <h1><span style={{color:'rgb(250, 117, 139)'}}>Lipstick</span> Shades and Colors</h1>
-                    <button className="allBtn" >ExPolore More</button>
+                   <Link to="/explore"> <button className="allBtn" >ExPolore More</button></Link>
                     </div>
                 </div>
         

@@ -1,57 +1,184 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './DashBoard.css';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MailIcon from '@mui/icons-material/Mail';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+  } from "react-router-dom";
+import { Button } from '@mui/material';
+import './DashBoard.css'
+import ManageAllOrders from '../Orders/MyOrders/ManageAllOrders/ManageAllOrders';
+import MyOrders from '../Orders/MyOrders/MyOrders';
+import DashBoardHome from '../DashBoardHome/DashBoardHome';
+import Pay from '../Pay/Pay';
+import AddProduct from '../AddProduct/AddProduct';
+import AddReview from '../Addreview/AddReview';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
-const DashBoard = () => {
-    return (
-       <div>
-           <div className="dashHeader text-end">
-               <h1 className="mx-3">DashBoard</h1>
-           </div>
-            <div style={{marginTop:'-10px'}} className="row">
-            <div className="col-12 col-lg-2 col-md-3 text-light ">
-                <div className="dashBoard">
-                    <ul>
-                        <li>
-                            <Link  to="/home"> Home</Link>
-                        </li>
-                    </ul>
-                    <h5>__________________________</h5>
-               <ul>
-                   <li>
-                       <Link to="/allOrders">AllOrders</Link>
-                   </li>
-                   <li>
-                       <Link to="/manageOrder">ManageOrder</Link>
-                   </li>
-                   <li>
-                       <Link to="/addProduct">AddProduct</Link>
-                   </li>
-                   <li>
-                       <Link to="/makeAdmin">MakeAdmin</Link>
-                   </li>
-                   <li>
-                       <Link to="/Pay">Pay</Link>
-                   </li>
-                   <li>
-                       <Link to="/myOrder">MyOrder</Link>
-                   </li>
-                   <li>
-                       <Link to="/review">Review</Link>
-                   </li>
-                   <button style={{backgroundColor:'black'}} className="btn mt-3 text-light"> LogOut</button>
-               </ul>
-                </div>
-            </div>
+const drawerWidth = 196;
 
-            <div className="col-12 col-lg-10 col-md-9">
-                <div>
+function DashBoard(props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  let { path, url } = useRouteMatch();
 
-                </div>
-            </div>
-        </div>
-       </div>
-    );
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <div>
+      <Toolbar />
+      <Divider />
+      
+   
+    <Link to={`${url}`}> <Button>DashBoard</Button></Link>
+      <Link to={`${url}/allOrders`}><Button >Manage AllOrders</Button></Link><br />
+      <Link to={`${url}/manageProducts`}><Button>Manage Products</Button></Link><br />
+      <Link to={`${url}/addProducts`}><Button>Add Products</Button></Link><br />
+      <Link to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link><br />
+      <Link to={`${url}/myOrders`}><Button>MyOrders</Button></Link> <br />
+      <Link to={`${url}/review`}><Button>Review</Button></Link> <br />
+      <Link to={`${url}/pay`}><Button>Pay</Button></Link>
+   
+  
+    
+      <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+    
+    </div>
+  );
+
+  const container = window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        sx={{
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap component="div">
+            DashBoard
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: 'none', sm: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+      >
+        <Toolbar />
+        <Box>
+        <Switch>
+        <Route exact path={path}>
+         <DashBoardHome></DashBoardHome>
+        </Route>
+        <Route exact path={`${path}/allOrders`}>
+         <ManageAllOrders/>
+        </Route>
+        <Route exact path={`${path}/myOrders`}>
+         <MyOrders></MyOrders>
+        </Route>
+        <Route exact path={`${path}/pay`}>
+         <Pay></Pay>
+        </Route>
+        <Route path={`${path}/review`}>
+         <AddReview></AddReview>
+        </Route>
+        <Route exact path={`${path}/addProducts`}>
+         <AddProduct></AddProduct>
+        </Route>
+        <Route exact path={`${path}/makeAdmin`}>
+         <MakeAdmin></MakeAdmin>
+        </Route>
+        <Route exact path={`${path}/manageProducts`}>
+         <ManageProducts></ManageProducts>
+        </Route>
+      </Switch>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+DashBoard.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
 };
 
 export default DashBoard;

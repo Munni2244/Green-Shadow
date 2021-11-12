@@ -6,13 +6,11 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('./reviewData.json')
+        fetch('http://localhost:4000/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
-    const ratingChanged = (newRating) => {
-        console.log(newRating)
-    }
+   
     return (
         <div style={{ marginTop: '100px' }} className="container text-center">
             <h1>All <span style={{color:'rgb(250, 117, 139)'}}>ReViEwS</span></h1>

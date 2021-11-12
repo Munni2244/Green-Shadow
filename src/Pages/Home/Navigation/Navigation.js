@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 import './Navigation.css';
 
 const Navigation = () => {
-  const {user, loading, logOut}=useAuth();
+  const { user, loading, logOut } = useAuth();
   return (
 
     <nav className="navbar navbar-expand-lg navbar-light navigation-bar">
@@ -25,15 +25,18 @@ const Navigation = () => {
           </ul>
           <form className="d-flex">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-             {user?.email && <li className="nav-item mt-2">
+             
+
+              {user?.email && <li className="nav-item mt-2">
                 <Link to="/dashboard" className="nav-link active ">DashBoard</Link>
               </li>}
+              <span className="ms-3 fw-bold fs-5 text-light mt-1">{user?.displayName}</span>
 
-              {user?.email? <button onClick={logOut} className="btn btn-danger border mt-2" style={{height:'40px'}} type="submit">LogOut</button> :
-               <Link to="/login"> <button className="btn border" type="submit">Login</button></Link>}
-           <Link to="/register"> <button className="btn border" type="submit">Register</button></Link>
+              {user?.email ? <button onClick={logOut} className="btn btn-danger border mt-2" style={{ height: '40px' }} type="submit">LogOut</button> :
+                <Link to="/login"> <button className="btn border" type="submit">Login</button></Link>}
+              <Link to="/register"> <button className="btn border" type="submit">Register</button></Link>
             </ul>
-         
+
           </form>
         </div>
       </div>
