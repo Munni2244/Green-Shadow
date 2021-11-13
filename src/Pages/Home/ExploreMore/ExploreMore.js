@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer';
 const ExploreMore = () => {
     const [allProducts, setAllProducts]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4000/products')
+        fetch('http://damp-eyrie-28424.herokuapp.com/products')
         .then(res=> res.json())
         .then(data=>setAllProducts(data))
     },[])

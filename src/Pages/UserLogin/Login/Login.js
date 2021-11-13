@@ -16,10 +16,11 @@ const Login = () => {
     }
     const history=useHistory();
     const location =useLocation();
+    console.log(location);
     const handleSubmit = (e) => {
        
         loginUser(login.email, login.password, login.name, location, history);
-        console.log('login success');
+         alert('login success');
         e.preventDefault();
 
     }

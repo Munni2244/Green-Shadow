@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 const ManageAllOrders = () => {
     const [allOrder, setAllOrder] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/allOrders')
+        fetch('http://damp-eyrie-28424.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => setAllOrder(data))
     }, [allOrder])
@@ -22,7 +22,7 @@ const ManageAllOrders = () => {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4000/orders/${id}`, {
+                fetch(`http://damp-eyrie-28424.herokuapp.com/orders/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -50,7 +50,7 @@ const ManageAllOrders = () => {
 
     ///update Booking
     const ApproveBooking = (id) => {
-        fetch(`http://localhost:4000/updateOrders/${id}`, {
+        fetch(`http://damp-eyrie-28424.herokuapp.com/updateOrders/${id}`, {
             method: "PUT",
         })
             .then(res => res.json())

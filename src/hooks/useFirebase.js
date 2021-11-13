@@ -44,14 +44,15 @@ const useFirebase = () => {
     const loginUser = (email, password,location, history) => {
         setLoading(true)
         signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-            console.log(result.user);
-                const destination= location?.state?.from || '/';
-                history.replace(destination);
+            .then(() => {
+                // const destination= location?.state?.from || '/';
+            // history.replace(destination);
+            console.log('history', history,location);
             })
             .catch((error) => {
             console.log(error.message);
             }).finally(()=>setLoading(false));
+           
     }
 
     ///on state change
@@ -63,6 +64,7 @@ const useFirebase = () => {
             } else {
                 setUser({})
             }
+            setLoading(false)
         });
         return () => unSubscribe;
 
@@ -82,7 +84,7 @@ const useFirebase = () => {
     //post user
     const saveUser=(email, displayName)=>{
         const user={email,displayName}
-    fetch('http://localhost:4000/addUserInfo',{
+    fetch('http://damp-eyrie-28424.herokuapp.com/addUserInfo',{
         method: "POST",
         headers:{ 'content-type' : 'application/json'},
         body:JSON.stringify(user)
@@ -93,7 +95,7 @@ const useFirebase = () => {
   
     //get admin
     useEffect(()=>{
-        fetch(`http://localhost:4000/users/${user.email}`)
+        fetch(`http://damp-eyrie-28424.herokuapp.com/users/${user.email}`)
         .then(res=>res.json())
         .then(data=>setAdmin(data.admin))
 

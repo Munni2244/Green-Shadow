@@ -7,7 +7,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [myOrder, setMyOrder] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:4000/orders/${user?.email}`)
+        fetch(`http://damp-eyrie-28424.herokuapp.com/orders/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrder(data))
     }, [user.email, myOrder])
@@ -25,7 +25,7 @@ const MyOrders = () => {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4000/orders/${id}`, {
+                fetch(`http://damp-eyrie-28424.herokuapp.com/orders/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

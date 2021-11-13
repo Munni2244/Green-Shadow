@@ -20,27 +20,27 @@ function App() {
         <Route exact path="/">
           <Home></Home>
         </Route>
-        <Route exact path="/home">
+        <Route  path="/home">
           <Home></Home>
         </Route>
-        <Route exact path="/contact">
+        {/* <Route  path="/contact">
           <Contact></Contact>
-        </Route>
-        <Route path="/dashBoard">
+        </Route> */}
+        {/* <Route path="/dashBoard">
           <DashBoard></DashBoard>
-        </Route>
-        <Route exact path="/login">
+        </Route> */}
+        <Route  path="/login">
          <Login></Login>
         </Route>
-        <Route exact path="/register">
+        <Route  path="/register">
           <Register></Register>
         </Route>
         <PrivateRoute path="/placeOrder/:id">
          <OrderPlace></OrderPlace>
         </PrivateRoute>
-        <Route exact path="/explore">
+        {/* <Route path="/explore">
           <ExploreMore></ExploreMore>
-        </Route>
+        </Route> */}
         <Route exact path="*">
          <NotFound></NotFound>
         </Route>
