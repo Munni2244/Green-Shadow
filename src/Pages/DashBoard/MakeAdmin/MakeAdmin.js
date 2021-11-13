@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
@@ -16,7 +17,13 @@ const MakeAdmin = () => {
          body: JSON.stringify(user)
         })
         .then(res=> res.json())
-        .then(data=> console.log(data))
+        .then(data=> {
+            if(data.acknowledged){
+                Swal.fire(
+                    'Good job!',
+                    'Admin create Successfully!'
+                )            }
+        })
         
 
     }

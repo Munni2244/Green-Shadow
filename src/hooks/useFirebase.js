@@ -45,8 +45,8 @@ const useFirebase = () => {
         setLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
-                // const destination= location?.state?.from || '/';
-            // history.replace(destination);
+                const destination= location?.state?.from || '/';
+            history.replace(destination);
             console.log('history', history,location);
             })
             .catch((error) => {

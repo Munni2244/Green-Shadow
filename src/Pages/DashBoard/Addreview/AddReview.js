@@ -35,11 +35,11 @@ const AddReview = () => {
                        <h1>Add Your Review</h1>
                        <form onSubmit={handleSubmit(onSubmit)}>
                            <input {...register("name")} placeholder="Your Name" /> <br />
-                           <input {...register("des")} placeholder="Review desCription" /> <br />
+                           <input {...register("des", {required: true})} placeholder="Review desCription" /> <br />
 
-                           <input type="url" {...register("img")} placeholder="Your Photo" /> <br />
+                        <input type="url" {...register("img", {required: true})} placeholder="Your Photo" /> <br />
 
-                           <input type="number" {...register("rating",{ required: true, min: 1, max: 5 })} placeholder=" Rating" /> <br />
+                           <input type="number" {...register("rating",{ required: true, min: 1, max: 5 })} placeholder=" Rating (number 1 To 5)" /> <br />
                            <input type="submit" />
 
                        </form>

@@ -23,12 +23,12 @@ function App() {
         <Route  path="/home">
           <Home></Home>
         </Route>
-        {/* <Route  path="/contact">
+        <Route  path="/contact">
           <Contact></Contact>
-        </Route> */}
-        {/* <Route path="/dashBoard">
+        </Route> 
+         <Route path="/dashBoard">
           <DashBoard></DashBoard>
-        </Route> */}
+        </Route>
         <Route  path="/login">
          <Login></Login>
         </Route>
@@ -38,9 +38,9 @@ function App() {
         <PrivateRoute path="/placeOrder/:id">
          <OrderPlace></OrderPlace>
         </PrivateRoute>
-        {/* <Route path="/explore">
+        <Route path="/explore">
           <ExploreMore></ExploreMore>
-        </Route> */}
+        </Route> 
         <Route exact path="*">
          <NotFound></NotFound>
         </Route>

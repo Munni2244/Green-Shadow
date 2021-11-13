@@ -17,9 +17,10 @@ const Login = () => {
     const history=useHistory();
     const location =useLocation();
     console.log(location);
+
     const handleSubmit = (e) => {
        
-        loginUser(login.email, login.password, login.name, location, history);
+        loginUser(login.email, login.password, location, history);
          alert('login success');
         e.preventDefault();
 

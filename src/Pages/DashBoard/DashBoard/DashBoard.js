@@ -34,7 +34,6 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import useAuth from '../../../hooks/useAuth';
 import AddminRoute from '../../UserLogin/PrivateRoute/AddminRoute';
-import Footer from '../../Home/Footer/Footer';
 
 const drawerWidth = 196;
 
@@ -55,17 +54,22 @@ function DashBoard(props) {
       
    
    <div className="dashBoard"> <Link to={`${url}`}> <Button>DashBoard</Button></Link>
-     {admin && <Box>
+     {admin? <Box>
       <Link to={`${url}/allOrders`}><Button >Manage AllOrders</Button></Link><br />
       <Link to={`${url}/manageProducts`}><Button>Manage Products</Button></Link><br />
       <Link to={`${url}/addProducts`}><Button>Add Products</Button></Link><br />
       <Link to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link><br />
-       </Box>}
-      <Link to={`${url}/myOrders`}><Button>MyOrders</Button></Link> <br />
+       </Box>:
+       <Box>
+          <Link to={`${url}/myOrders`}><Button>MyOrders</Button></Link> <br />
       <Link to={`${url}/review`}><Button>Review</Button></Link> <br />
       <Link to={`${url}/pay`}><Button>Pay</Button></Link> <br/>
-      <Link to="/home"><Button>Go Home</Button></Link>
+     
+       </Box>
+       }
+        <Link to="/home"><Button>Go Home</Button></Link>
       <Link to="/home"><Button onClick={logOut}>LogOut</Button></Link>
+     
        </div>
    
       <Divider />
