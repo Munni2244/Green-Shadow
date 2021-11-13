@@ -1,10 +1,29 @@
 
 .dashBoard  a{
     text-decoration:none;
+  width: 100%;
+}
+
+.dashBoard {
+    height: 600px;
+    background-color: rgb(252, 209, 231);
+    color: antiquewhite;
     
 }
 .dashBoard Button{
     color: black;
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgb(124, 174, 221);
+    
+
+}
+.dashBoard Button:hover{
+    border: 1px solid white;
+    background-color: black;
+    color: aliceblue;
+    width: 100%;
+ 
 }
 
 

@@ -28,23 +28,25 @@ const OrderPlace = () => {
         data.title = `${order.name}`;
         data.price = `${order.price}`;
         data.img = `${order.img}`;
-        // fetch('', {
-        //     method: 'POST',
-        //     headers: { 'content-type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.acknowledged) {
-        //             Swal.fire(
-        //                 'Good job!',
-        //                 'Booking Successfully!'
-        //             )
+        data.name = `${user.displayName}`;
+        data.email = `${user.email}`;
+        fetch('http://localhost:4000/orders', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire(
+                        'Good job!',
+                        'Booking Successfully!'
+                    )
 
-        //         }
+                }
 
                 console.log(data);
-        //     })
+            })
     };
 
     return (
@@ -69,8 +71,8 @@ const OrderPlace = () => {
                         <div className=" text-center formStyle py-5">
                             <h1>Register For Services</h1>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <input {...register("name")} placeholder="Name" defaultValue={user ? user.displayName : ''} /> <br />
-                                <input {...register("email")} placeholder="email" defaultValue={user ? user.email : ''} /> <br />
+                                <input {...register("name")} placeholder="Name" defaultValue={user ? user.displayName : ''} disabled /> <br />
+                                <input {...register("email")} placeholder="email" defaultValue={user ? user.email : ''} disabled /> <br />
 
                                 <input type="text" {...register("address")} placeholder="Address" /> <br />
                                 <input type="date" {...register("date")} placeholder="date" /> <br />

@@ -5,4 +5,5 @@
     background-position: center;
     background-size: cover;
     height: 500px;
+    background-attachment: fixed;
 }

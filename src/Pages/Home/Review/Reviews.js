@@ -17,7 +17,7 @@ const Reviews = () => {
             <div className="row ms-5">
                 {
                     reviews.map(review => (
-                        <div style={{ width: '250px' }} className="col-12 col-lg-3 col-md-6 text-center ">
+                        <div key={review._id} style={{ width: '250px' }} className="col-12 col-lg-3 col-md-6 text-center ">
                             <div style={{ height:'350px'}} className=" p-4">
                             <div className="ms-2">
                                 <img className="rounded-circle" width="100px" height="100px" src={review.img} alt="" />

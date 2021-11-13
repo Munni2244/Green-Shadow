@@ -16,11 +16,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-    BrowserRouter as Router,
+    BrowserRouter ,
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
   } from "react-router-dom";
 import { Button } from '@mui/material';
@@ -33,45 +32,42 @@ import AddProduct from '../AddProduct/AddProduct';
 import AddReview from '../Addreview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import useAuth from '../../../hooks/useAuth';
+import AddminRoute from '../../UserLogin/PrivateRoute/AddminRoute';
+import Footer from '../../Home/Footer/Footer';
 
 const drawerWidth = 196;
 
 function DashBoard(props) {
+  const {logOut, admin}=useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
-
+  
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
   const drawer = (
-    <div>
+    <div className="">
       <Toolbar />
       <Divider />
       
    
-    <Link to={`${url}`}> <Button>DashBoard</Button></Link>
+   <div className="dashBoard"> <Link to={`${url}`}> <Button>DashBoard</Button></Link>
+     {admin && <Box>
       <Link to={`${url}/allOrders`}><Button >Manage AllOrders</Button></Link><br />
       <Link to={`${url}/manageProducts`}><Button>Manage Products</Button></Link><br />
       <Link to={`${url}/addProducts`}><Button>Add Products</Button></Link><br />
       <Link to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link><br />
+       </Box>}
       <Link to={`${url}/myOrders`}><Button>MyOrders</Button></Link> <br />
       <Link to={`${url}/review`}><Button>Review</Button></Link> <br />
-      <Link to={`${url}/pay`}><Button>Pay</Button></Link>
+      <Link to={`${url}/pay`}><Button>Pay</Button></Link> <br/>
+      <Link to="/home"><Button>Go Home</Button></Link>
+      <Link to="/home"><Button onClick={logOut}>LogOut</Button></Link>
+       </div>
    
-  
-    
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
       <Divider />
     
     </div>
@@ -160,16 +156,18 @@ function DashBoard(props) {
         <Route exact path={`${path}/addProducts`}>
          <AddProduct></AddProduct>
         </Route>
-        <Route exact path={`${path}/makeAdmin`}>
+        <AddminRoute exact path={`${path}/makeAdmin`}>
          <MakeAdmin></MakeAdmin>
-        </Route>
+        </AddminRoute>
         <Route exact path={`${path}/manageProducts`}>
          <ManageProducts></ManageProducts>
         </Route>
       </Switch>
         </Box>
       </Box>
+     
     </Box>
+    
   );
 }
 

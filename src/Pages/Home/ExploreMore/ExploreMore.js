@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../Navigation/Navigation';
 import ExploreProducts from './ExploreProducts';
+import './ExploreMore.css'
+import Footer from '../Footer/Footer';
 
 const ExploreMore = () => {
     const [allProducts, setAllProducts]=useState([]);
@@ -11,10 +13,16 @@ const ExploreMore = () => {
     },[])
     
     return (
-       <div>
+       <div >
            <Navigation/>
+           <div className="explore text-center text-light d-flex align-items-center justify-content-center">
+               <div className=" mt-5">
+               <h1 >More <span style={{color:'rgb(250, 117, 139)'}}>ProDuctS</span></h1>
+
+               </div>
+           </div>
             <div style={{marginTop:'60px'}} className="container text-center ">
-        <h1>More <span style={{color:'rgb(250, 117, 139)'}}>ProDuctS</span></h1>
+        
        <div className="row ms-5">
           
        {
@@ -22,6 +30,7 @@ const ExploreMore = () => {
        }
    </div>
    </div>
+   <Footer></Footer>
        </div>
     );
 };

@@ -1,10 +1,7 @@
-.contact{
-    background-image: url('../../../images/footer.jpg');
+.notFound{
+    background-image: url('../../../images/404.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 500px;
-   
- 
-
 }

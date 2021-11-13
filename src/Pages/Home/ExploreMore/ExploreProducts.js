@@ -13,6 +13,7 @@ const ExploreProducts = ({product}) => {
                 <p className="fw-bold">${price}</p>
                <Link to={`/placeOrder/${_id}`}> <button  style={{width:'100px'}} className="allBtn rounded-pill text-light">Order Now</button></Link>
             </div>
+            
         </div>
     );
 };

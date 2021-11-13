@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState} from 'react';
+import { Link ,useHistory,useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
     const {loginUser}=useAuth();
     const [login, setLogin]=useState({});
+    
     const handleField = (e) => {
         const value = e.target.value;
         const field = e.target.name;
@@ -13,10 +14,11 @@ const Login = () => {
         console.log(newValue);
         setLogin(newValue);
     }
-
+    const history=useHistory();
+    const location =useLocation();
     const handleSubmit = (e) => {
        
-        loginUser(login.email, login.password, login.name);
+        loginUser(login.email, login.password, login.name, location, history);
         console.log('login success');
         e.preventDefault();
 

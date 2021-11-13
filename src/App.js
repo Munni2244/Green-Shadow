@@ -5,8 +5,10 @@ import DashBoard from './Pages/DashBoard/DashBoard/DashBoard';
 import Contact from './Pages/Home/Contact/Contact';
 import ExploreMore from './Pages/Home/ExploreMore/ExploreMore';
 import Home from './Pages/Home/Home/Home';
+import NotFound from './Pages/Home/NotFound/NotFound';
 import OrderPlace from './Pages/OrderPlace/OrderPlace';
 import Login from './Pages/UserLogin/Login/Login';
+import PrivateRoute from './Pages/UserLogin/PrivateRoute/PrivateRoute';
 import Register from './Pages/UserLogin/Register/Register';
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
         <Route exact path="/contact">
           <Contact></Contact>
         </Route>
-        <Route exact path="/dashBoard">
+        <Route path="/dashBoard">
           <DashBoard></DashBoard>
         </Route>
         <Route exact path="/login">
@@ -33,11 +35,14 @@ function App() {
         <Route exact path="/register">
           <Register></Register>
         </Route>
-        <Route exact path="/placeOrder/:id">
+        <PrivateRoute path="/placeOrder/:id">
          <OrderPlace></OrderPlace>
-        </Route>
+        </PrivateRoute>
         <Route exact path="/explore">
           <ExploreMore></ExploreMore>
+        </Route>
+        <Route exact path="*">
+         <NotFound></NotFound>
         </Route>
       </Switch>
     </BrowserRouter>
