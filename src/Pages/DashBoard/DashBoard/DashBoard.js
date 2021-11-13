@@ -35,7 +35,7 @@ import ManageProducts from '../ManageProducts/ManageProducts';
 import useAuth from '../../../hooks/useAuth';
 import AddminRoute from '../../UserLogin/PrivateRoute/AddminRoute';
 
-const drawerWidth = 196;
+const drawerWidth = 200;
 
 function DashBoard(props) {
   const {logOut, admin}=useAuth();
@@ -53,22 +53,22 @@ function DashBoard(props) {
       <Divider />
       
    
-   <div className="dashBoard"> <Link to={`${url}`}> <Button>DashBoard</Button></Link>
+   <div className="dashBoard"> <Link to={`${url}`}> <Button><i class="fas fa-columns"></i> DashBoard</Button></Link>
      {admin? <Box>
-      <Link to={`${url}/allOrders`}><Button >Manage AllOrders</Button></Link><br />
-      <Link to={`${url}/manageProducts`}><Button>Manage Products</Button></Link><br />
-      <Link to={`${url}/addProducts`}><Button>Add Products</Button></Link><br />
-      <Link to={`${url}/makeAdmin`}><Button>Make Admin</Button></Link><br />
+      <Link to={`${url}/allOrders`}> <Button><i class="fas fa-shopping-cart"></i> ManageAllOrders</Button></Link><br />
+      <Link to={`${url}/manageProducts`}><Button><i class="fab fa-product-hunt"></i>ManageProducts</Button></Link><br />
+      <Link to={`${url}/addProducts`}><Button><i class="fas fa-plus-square"></i>Add Products</Button></Link><br />
+      <Link to={`${url}/makeAdmin`}><Button> <i class="fas fa-users-cog"></i> Make Admin</Button></Link><br />
        </Box>:
        <Box>
-          <Link to={`${url}/myOrders`}><Button>MyOrders</Button></Link> <br />
-      <Link to={`${url}/review`}><Button>Review</Button></Link> <br />
-      <Link to={`${url}/pay`}><Button>Pay</Button></Link> <br/>
+          <Link to={`${url}/myOrders`}><Button><i class="fas fa-shopping-cart"></i> MyOrders</Button></Link> <br />
+      <Link to={`${url}/review`}><Button><i class="fas fa-file-pdf"></i> Review</Button></Link> <br />
+      <Link to={`${url}/pay`}><Button><i class="fab fa-amazon-pay"></i> Pay</Button></Link> <br/>
      
        </Box>
        }
-        <Link to="/home"><Button>Go Home</Button></Link>
-      <Link to="/home"><Button onClick={logOut}>LogOut</Button></Link>
+        <Link to="/home"><Button><i class="fas fa-home"></i>  Go Home</Button></Link>
+      <Link to="/home"><Button onClick={logOut}><i class="fas fa-sign-out-alt"></i>  LogOut</Button></Link>
      
        </div>
    
@@ -83,8 +83,10 @@ function DashBoard(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
+    
         position="fixed"
         sx={{
+          
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
@@ -105,8 +107,9 @@ function DashBoard(props) {
         </Toolbar>
       </AppBar>
       <Box
+      
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }}}
         aria-label="mailbox folders"
       >
         <Drawer

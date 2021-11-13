@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const user={email};
-        fetch('http://damp-eyrie-28424.herokuapp.com/makeAdmin',{
+        fetch('https://damp-eyrie-28424.herokuapp.com/makeAdmin',{
          method: "PUT",
          headers:{ "content-type": "application/json"},
          body: JSON.stringify(user)

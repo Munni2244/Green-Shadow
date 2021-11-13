@@ -84,7 +84,7 @@ const useFirebase = () => {
     //post user
     const saveUser=(email, displayName)=>{
         const user={email,displayName}
-    fetch('http://damp-eyrie-28424.herokuapp.com/addUserInfo',{
+    fetch('https://damp-eyrie-28424.herokuapp.com/addUserInfo',{
         method: "POST",
         headers:{ 'content-type' : 'application/json'},
         body:JSON.stringify(user)
@@ -95,9 +95,9 @@ const useFirebase = () => {
   
     //get admin
     useEffect(()=>{
-        fetch(`http://damp-eyrie-28424.herokuapp.com/users/${user.email}`)
+        fetch(`https://damp-eyrie-28424.herokuapp.com/users/${user?.email}`)
         .then(res=>res.json())
-        .then(data=>setAdmin(data.admin))
+        .then(data=>setAdmin(data?.admin))
 
     },[user.email])
 

@@ -6,10 +6,10 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://damp-eyrie-28424.herokuapp.com/review')
+        fetch('https://damp-eyrie-28424.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, [reviews])
    
     return (
         <div style={{ marginTop: '100px' }} className="container text-center">

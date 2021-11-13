@@ -16,7 +16,7 @@ const OrderPlace = () => {
 
     // get id booking
     useEffect(() => {
-        fetch(`http://damp-eyrie-28424.herokuapp.com/products/${id}`)
+        fetch(`https://damp-eyrie-28424.herokuapp.com/products/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [])
@@ -30,7 +30,7 @@ const OrderPlace = () => {
         data.img = `${order.img}`;
         data.name = `${user.displayName}`;
         data.email = `${user.email}`;
-        fetch('http://damp-eyrie-28424.herokuapp.com/orders', {
+        fetch('https://damp-eyrie-28424.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

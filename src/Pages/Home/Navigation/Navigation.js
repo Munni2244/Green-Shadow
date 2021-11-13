@@ -4,12 +4,12 @@ import useAuth from '../../../hooks/useAuth';
 import './Navigation.css';
 
 const Navigation = () => {
-  const { user, loading, logOut } = useAuth();
+  const { user, logOut } = useAuth();
   return (
 
     <nav className="navbar navbar-expand-lg navbar-light navigation-bar">
       <div className="container-fluid">
-        <Link className="navbar-brand text-success fw-bold" href="#">GrEEn <span style={{ color: 'rgb(250, 117, 139)' }}>SHaDoW</span></Link>
+        <Link to="/home" className="navbar-brand text-success fw-bold" href="#">GrEEn <span style={{ color: 'rgb(250, 117, 139)' }}>SHaDoW</span></Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

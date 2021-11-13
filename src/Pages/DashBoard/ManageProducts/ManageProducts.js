@@ -6,7 +6,7 @@ const ManageProducts = () => {
     const [manageProduct, setManageProduct]=useState([]);
 
     useEffect(()=>{
-        fetch('http://damp-eyrie-28424.herokuapp.com/products')
+        fetch('https://damp-eyrie-28424.herokuapp.com/products')
         .then(res=> res.json())
         .then(data=>setManageProduct(data))
     },[manageProduct])
@@ -24,7 +24,7 @@ const ManageProducts = () => {
     
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://damp-eyrie-28424.herokuapp.com/products/${id}`,{
+                fetch(`https://damp-eyrie-28424.herokuapp.com/products/${id}`,{
                         method:'DELETE'
                     })
                     .then(res=> res.json())

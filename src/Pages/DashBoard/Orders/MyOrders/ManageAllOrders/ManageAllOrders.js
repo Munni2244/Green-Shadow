@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 const ManageAllOrders = () => {
     const [allOrder, setAllOrder] = useState([]);
     useEffect(() => {
-        fetch('http://damp-eyrie-28424.herokuapp.com/allOrders')
+        fetch('https://damp-eyrie-28424.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => setAllOrder(data))
     }, [allOrder])
@@ -22,7 +22,7 @@ const ManageAllOrders = () => {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://damp-eyrie-28424.herokuapp.com/orders/${id}`, {
+                fetch(`https://damp-eyrie-28424.herokuapp.com/orders/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -50,7 +50,7 @@ const ManageAllOrders = () => {
 
     ///update Booking
     const ApproveBooking = (id) => {
-        fetch(`http://damp-eyrie-28424.herokuapp.com/updateOrders/${id}`, {
+        fetch(`https://damp-eyrie-28424.herokuapp.com/updateOrders/${id}`, {
             method: "PUT",
         })
             .then(res => res.json())
@@ -60,7 +60,7 @@ const ManageAllOrders = () => {
     return (
         <div >
             <div className="m-3">
-                <h1 className="text-center text-danger mb-4">All Bookings</h1>
+                <h1 className="text-center text-danger mb-4">All Orders</h1>
                 <div className="table-responsive">
                     <table className="table table-dark table-hover">
                         <thead>
