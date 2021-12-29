@@ -57,10 +57,9 @@ const ManageProducts = () => {
     {
         manageProduct?.map(product=> (
             <div className="col-12 col-lg-4 col-md-6">
-            <div style={{width:'300px', height:'490px', marginTop:'40px', borderRadius:'20px'}} className=" text-center shadow services">
+            <div style={{width:'280px', height:'380px', marginTop:'40px'}} className=" text-center shadow services">
                 <img width="100%" height="230px" src={product.img} alt="" />
-                <h4 style={{color:'rgb(250, 117, 139)'}}>{product.name}</h4>
-                <p className="text-secondary">{product.des}</p>
+                <h4 style={{color:'black', fontWeight:'bold'}}>{product.name}</h4>
                 <p className="fw-bold">${product.price}</p>
               <button onClick={()=>CancelBooking(product._id)}  className="allBtn rounded-pill text-light"> Remove Product </button>
              

@@ -9,9 +9,9 @@ const Banner = () => {
         <div className="row ">
             <div className="col-12 col-lg-9 banner1 d-flex align-items-center justify-content-center ">
                     <div className="mb-5 me-5">
-                    <h1> <span style={{color:'rgb(250, 117, 139)'}}>Women Latest </span> and Beautiful Maybelline </h1>
-                    <h1><span style={{color:'rgb(250, 117, 139)'}}>Lipstick</span> Shades and Colors</h1>
-                   <Link to="/explore"> <button className="allBtn" >ExPolore More</button></Link>
+                    <h1 className='fw-bold'> <span style={{color:'rgb(250, 117, 139)'}}>Women Latest </span> and Beautiful Maybelline </h1>
+                    <h1 className='fw-bold'><span style={{color:'rgb(250, 117, 139)'}}>Lipstick</span> Shades and Colors</h1>
+                   <Link to="/explore"> <button className="allBtn fw-bold" >ExPolore More</button></Link>
                     </div>
                 </div>
         

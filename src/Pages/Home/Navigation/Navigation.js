@@ -32,7 +32,7 @@ const Navigation = () => {
               </li>}
               <span className="ms-3 mt-3 fw-bold fs-5  mt-1">{user?.displayName}</span>
 
-              {user?.email ? <button onClick={logOut} className="btn btn-danger border mt-2" style={{ height: '40px' }} type="submit">LogOut</button> :
+              {user?.email ? <button onClick={logOut} className="btn border  mt-2 ms-2" style={{ height: '40px', borderRadius:'8px' }} type="submit">LogOut</button> :
                 <Link to="/login"> <button className="btn border" type="submit">Login</button></Link>}
               <Link to="/register"> <button className="btn border" type="submit">Register</button></Link>
             </ul>

@@ -54,8 +54,8 @@ const OrderPlace = () => {
             <Navigation />
             <div className="container ">
                 <div style={{ marginTop: '60px' ,  }} className=" row shadow p-3 ">
-                    <div  className="col-12 col-lg-6 col-md-6">
-                        <img  width="550px"  className="img-fluid" src={order.img} alt="" />
+                    <div style={{height:'420px'}} className="col-12 col-lg-6 col-md-6">
+                        <img  width="550px" height="90%"  className="" src={order.img} alt="" />
                     </div>
 
                     <div className="col-12 col-lg-6 col-md-6 mt-5">
