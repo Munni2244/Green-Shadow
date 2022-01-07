@@ -1,12 +1,12 @@
 .footter ul a {
     text-decoration: none;
-    color: rgb(252, 249, 249);
+color: black;
 }
 .footter{
-    background-image: url('../../../images/img2.jpg');
-    background-position: center;
+    background-image: url('../../../images/footer_1920x.png');
+    /* background-position: ; */
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
-    background-attachment: fixed;
+    height: 350px;
+    background-color: #faf3ed;
 }

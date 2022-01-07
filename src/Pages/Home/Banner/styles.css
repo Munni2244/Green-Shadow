@@ -1,0 +1,29 @@
+.banner1{
+  background-image: url("../../../images/mob-slider3_767x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 10px;
+  height: 500px;
+  border-radius: 15px;
+  color: #292828;
+
+
+}
+.banner2 img{
+  height: 250px;
+  width: 100%;
+  border-radius: 20px;
+
+}
+.banner2{
+  margin-right: 20px;
+
+}
+.allBtn{
+  background-color: #d0936a;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  width: 200px;
+  margin-top: 10px;
+}

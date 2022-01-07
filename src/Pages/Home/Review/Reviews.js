@@ -13,7 +13,7 @@ const Reviews = () => {
    
     return (
         <div style={{ marginTop: '100px' }} className="container text-center">
-            <h1>All <span style={{color:'rgb(250, 117, 139)'}}>ReViEwS</span></h1>
+            <h1>All <span style={{color:'#d0936a'}}>ReViEwS</span></h1>
             <div className="row ms-5">
                 {
                     reviews.map(review => (
@@ -21,7 +21,7 @@ const Reviews = () => {
                             <div style={{ height:'350px'}} className=" p-4">
                             <div className="ms-2">
                                 <img className="rounded-circle" width="100px" height="100px" src={review.img} alt="" />
-                                <h4 style={{ color: 'rgb(250, 117, 139)' }}>{review.name}</h4>
+                                <h4 style={{ color: '#d0936a' }}>{review.name}</h4>
 
                             </div>
                             <p className="text-secondary"><small>{review.des}</small></p>

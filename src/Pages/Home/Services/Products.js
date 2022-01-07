@@ -22,7 +22,7 @@ const Products = () => {
     }
     return (
         <div style={{marginTop:'100px'}} className="container text-center ">
-             <h1>OuR <span style={{color:'rgb(250, 117, 139)'}}>ProDuctS</span></h1>
+             <h1>OuR <span style={{color:'#d0936a'}}>ProDuctS</span></h1>
             <div className="row ">
                
             {
