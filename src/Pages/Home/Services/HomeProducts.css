@@ -1,10 +1,16 @@
-.services{
+.services-img{
+    /* border: 1px solid #d0936a; */
 
 }
-.services:hover{
-    transform:scale(1.1);
+.services:hover img{
+    transform:scale(1.2);
     transition: transform 0.5s;
     padding: 5px;
     color: black;
+    box-sizing: border-box;
+}
 
+.cart-link{
+    margin-bottom: 5px;
+    color: #d0936a;
 }

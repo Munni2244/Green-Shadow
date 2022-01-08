@@ -26,7 +26,7 @@ const Products = () => {
             <div className="row ">
                
             {
-                products?.slice(0,6).map(service=> <HomeProducts service={service} key={service._id} ></HomeProducts> )
+                products?.slice(0,8).map(service=> <HomeProducts service={service} key={service._id} ></HomeProducts> )
             }
         </div>
         </div>

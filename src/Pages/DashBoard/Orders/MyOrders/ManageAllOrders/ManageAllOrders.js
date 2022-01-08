@@ -89,7 +89,9 @@ const ManageAllOrders = () => {
                                         <td>{orders.date}</td>
                                         <td>{orders.address}</td>
                                         <td>{orders.price}</td>
-                                        <td>{orders.status} <button onClick={() => ApproveBooking(orders._id)} className="btn btn-success">Approve</button> <button onClick={() => CancelBooking(orders._id)} className="btn btn-danger ms-1">Cancel</button></td>
+                                        <td>{orders.status}
+                                         <button onClick={() => ApproveBooking(orders._id)} className="btn btn-success">Approve</button> 
+                                        <button style={{marginLeft:'60px'}} onClick={() => CancelBooking(orders._id)} className="btn mt-2 btn-danger ">Cancel</button></td>
 
                                     </tr>
                                 </tbody>

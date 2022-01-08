@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import Navigation from '../Home/Navigation/Navigation';
 import Swal from 'sweetalert2';
 import './OrderPlace.css'
+import Footer from '../Home/Footer/Footer';
 
 
 const OrderPlace = () => {
@@ -53,41 +54,41 @@ const OrderPlace = () => {
         <div>
             <Navigation />
             <div className="container ">
-                <div style={{ marginTop: '60px' ,  }} className=" row shadow p-3 ">
-                    <div style={{height:'420px'}} className="col-12 col-lg-6 col-md-6">
-                        <img  width="550px" height="90%"  className="" src={order.img} alt="" />
+                <div style={{ marginTop: '60px', }} className=" row  ">
+                    <div style={{ height: '500px' }} className="col-12 col-lg-5 col-md-5">
+                        <img width="100%" height="100%" className="" src={order.img} alt="" />
                     </div>
 
-                    <div className="col-12 col-lg-6 col-md-6 mt-5">
-                        <h3>{order.name}</h3>
-                        <p>{order.des}</p>
-                        <h3>${order.price}</h3>
-                    </div>
-                </div>
+                    <div className="col-12 col-lg-7 col-md-7 ">
 
-               <div className="row">
-               <div className="col-12 col-12">
-                    <div className=" d-flex justify-content-center mt-5">
-                        <div className=" text-center formStyle py-5">
-                            <h1>Register For Services</h1>
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <input {...register("name")} placeholder="Name" defaultValue={user ? user.displayName : ''} disabled /> <br />
-                                <input {...register("email")} placeholder="email" defaultValue={user ? user.email : ''} disabled /> <br />
+                        <div className=" ">
+                            <div className=" text-center formStyle ">
+                                <h1>Register For Services</h1>
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <input {...register("name")} placeholder="Name" defaultValue={user ? user.displayName : ''} disabled /> <br />
+                                    <input {...register("email")} placeholder="email" defaultValue={user ? user.email : ''} disabled /> <br />
 
-                                <input type="text" {...register("address")} placeholder="Address" /> <br />
-                                <input type="date" {...register("date")} placeholder="date" /> <br />
+                                    <input type="text" {...register("address")} placeholder="Address" /> <br />
+                                    <input type="date" {...register("date")} placeholder="date" /> <br />
 
-                                <input type="number" {...register("number")} placeholder="Number" /> <br />
-                                <input type="submit" />
+                                    <input type="number" {...register("number")} placeholder="Number" /> <br />
+                                    <input type="submit" />
 
-                            </form>
+                                </form>
 
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-               </div>
+                <div>
+                    <h3 style={{color:'#d0936a'}}>{order.name}</h3>
+                    <p>{order.des}</p>
+                    <h3>${order.price}</h3>
+                </div>
+
             </div>
+            <Footer></Footer>
         </div>
     );
 };

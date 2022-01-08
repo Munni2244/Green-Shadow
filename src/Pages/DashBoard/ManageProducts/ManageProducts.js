@@ -57,7 +57,7 @@ const ManageProducts = () => {
     {
         manageProduct?.map(product=> (
             <div className="col-12 col-lg-4 col-md-6">
-            <div style={{width:'280px', height:'380px', marginTop:'40px'}} className=" text-center shadow services">
+            <div style={{width:'280px', height:'380px', marginTop:'40px'}} className=" text-center  services">
                 <img width="100%" height="230px" src={product.img} alt="" />
                 <h4 style={{color:'black', fontWeight:'bold'}}>{product.name}</h4>
                 <p className="fw-bold">${product.price}</p>
